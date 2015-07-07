@@ -1,0 +1,218 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="~/css/superfish.css" media="screen">
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/superfish.js"></script>
+    <script type="text/javascript" src="~/js/move-top.js"></script>
+    <script type="text/javascript" src="~/js/easing.js"></script>
+    <script>
+        (function ($) { //create closure so we can safely use $ as alias for jQuery
+            $(document).ready(function () {
+                // initialise plugin
+                var example = $('#example').superfish({
+                    //add options here if required
+                });
+                // buttons to demonstrate Superfish's public methods
+                $('.destroy').on('click', function () {
+                    example.superfish('destroy');
+                });
+                $('.init').on('click', function () {
+                    example.superfish();
+                });
+                $('.open').on('click', function () {
+                    example.children('li:first').superfish('show');
+                });
+                $('.close').on('click', function () {
+                    example.children('li:first').superfish('hide');
+                });
+            });
+        })(jQuery);
+    </script>
+</head>
+<body>
+    <!---start-wrap---->
+    <!---start-content----->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+
+    <!-- Include jQuery -->
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+    <!-- Include KillerCarousel CSS -->
+    <link href="~/killercarousel.css" type="text/css" rel="stylesheet" />
+
+    <!-- Include KillerCarousel JavaScript -->
+    <script type="text/javascript" src="~/killercarousel.js"></script>
+
+
+    <!-- Various page styles. -->
+    <style type="text/css">
+        body {
+            font-family: arial, sans-serif;
+            color: #444;
+            font-size: 16px;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #div1 {
+            background-image: "url('images/image1.jpg')";
+        }
+
+        p {
+            line-height: 20px;
+        }
+
+        code {
+            font-weight: bold;
+            color: #f44;
+            ;
+        }
+
+        a {
+            color: #3d8dde;
+        }
+
+        #wrapper {
+            padding: 10px;
+        }
+    </style>
+    <!-- Styles for the Carousel -->
+    <style type="text/css">
+        /* CSS for images inside item wrapper */
+        .kc-item img {
+            position: absolute;
+            pointer-events: none; /* Make images non-selectable. */
+            width: 100%; /* Make images expand to wrapper size (used in 2d modes). */
+        }
+    </style>
+    <script type="text/javascript">
+        // Create the carousel.
+        $(function () {
+            $('.kc-wrap').KillerCarousel({
+                // Default natural width of carousel.
+                width: 800,
+                // Item spacing in 3d (has CSS3 3d) mode.
+                spacing3d: 120,
+                // Item spacing in 2d (no CSS3 3d) mode.
+                spacing2d: 120,
+                showShadow: true,
+                showReflection: true,
+                // Looping mode.
+                infiniteLoop: true,
+                // Scale at 75% of parent element.
+                autoScale: 75
+            });
+        });
+    </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+
+
+            <!-- The carouse wrapper -->
+            <div class="kc-wrap">
+                <!-- Carousel items follow -->
+                <div class="kc-item">
+                    <img src="~/Images/10-greatest-movie-posters-ever-made-00-420-75.jpg" alt="Salvator Mundi 1519">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/66552.jpg" alt="St. John the Baptist 1516">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/8.jpg" alt="Lady with an Ermine 1490">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/beautiful_creatures_version4-movie-poster.jpg" alt="St. Jerome in the Wilderness 1480">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/behind-scenes-shooting-martyrs-movie-poster.w654.jpg" alt="Head of a Woman 1508">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/Creative-Movie-Posters-71.jpg" alt="St. John the Baptist 1516">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/Fast-Furious6-Movie-Poster.jpg" alt="The Virgin and Child with St Anne and St John the Baptist 1500">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/film-poster-51.jpg" alt="Madonna of the Yarnwinder 1507">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/images.jpg" alt="The Virgin and Child with St. Anne 1508">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/images1.jpg" alt="Madonna of the Carnation 1480">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/images13.jpg" alt="La belle ferronnière 1496">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/images21.jpg" alt="Adoration of the Magi 1481">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/images454.jpg" alt="Portrait of a Musician 1490">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/images45.jpg" alt="Virgin of the Rocks 1486">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/the-matrix-movie-poster.jpg" alt="Madonna of Laroque 1503">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/index.jpg" alt="Benois Madonna 1478">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/interstellar_movie_poster_2.jpg" alt="Mona Lisa 1517">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/Elizabeth_Debicki_Great_Gatsby_Movie_Poster.jpg" alt="Portrait of a man in red chalk 1512">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/man-of-steel-2013-movie-poster.jpg" alt="Ginevra de' Benci 1478">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/mockingjay-movie-poster-liam-hemsworth-lead.jpg" alt="The Last Supper 1498">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/new-captain-america-the-winter-soldier-movie-posters-fdf3865a-7d80-419d-bc79-da267a08a491.jpeg" alt="Annunciation 1475">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/the-avengers-alternative-movie-posters-1.jpg" alt="The Battle of Anghiari 1505">
+                </div>
+                <div class="kc-item">
+                    <img src="~/Images/The-Wolverine-Movie-Poster.jpg" alt="Madonna Litta 1491">
+                </div>
+            </div>
+
+            <div class="footer-right">
+
+                </p>
+                <script type="text/javascript">
+                        $(document).ready(function () {
+
+                            var defaults = {
+                                containerID: 'toTop', // fading element id
+                                containerHoverID: 'toTopHover', // fading element
+
+    hover id
+                                scrollSpeed: 1200,
+                                easingType: 'linear'
+                            };
+
+
+                            $().UItoTop({ easingType: 'easeOutQuart' });
+
+                        });
+

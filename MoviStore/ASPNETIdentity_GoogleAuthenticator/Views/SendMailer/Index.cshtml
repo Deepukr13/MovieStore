@@ -1,0 +1,26 @@
+﻿@model ASPNETIdentity_GoogleAuthenticator.Models.MailModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<h2>Index</h2>
+<fieldset>
+    <legend>
+        Send Email
+    </legend>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        <p>From: </p>
+        <p>@Html.TextBoxFor(m => m.From)</p>
+        <p>To: </p>
+        <p>@Html.TextBoxFor(m => m.To)</p>
+        <p>Subject: </p>
+        <p>@Html.TextBoxFor(m => m.Subject)</p>
+        <p>Body: </p>
+        <p>@Html.TextAreaFor(m => m.Body)</p>
+        <input type="submit" value="Send" />
+    }
+</fieldset>
+

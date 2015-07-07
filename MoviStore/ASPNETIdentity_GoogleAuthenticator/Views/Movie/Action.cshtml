@@ -1,0 +1,119 @@
+﻿
+
+
+
+
+
+<style>
+    .titlec {
+        font-size: small;
+    }
+
+    ul.videos li {
+        float: left;
+        width: 10em;
+        margin-bottom: 1em;
+    }
+
+    ul.videos {
+        margin-bottom: 1em;
+        padding-left: 0em;
+        margin-left: 0em;
+        list-style: none;
+    }
+</style>
+<script type="text/javascript" src="http://swfobject.googlecode.com/svn/trunk/swfobject/swfobject.js"></script>
+<script type="text/javascript">
+    function loadVideo(playerUrl, autoplay) {
+        swfobject.embedSWF(
+            playerUrl + '&rel=1&border=0&fs=1&autoplay=' +
+            (autoplay ? 1 : 0), 'player', '290', '250', '9.0.0', false,
+            false, { allowfullscreen: 'true' });
+    }
+
+    function showMyVideos2(data) {
+        var feed = data.feed;
+        var entries = feed.entry || [];
+        var html = ['<ul class="videos">'];
+        for (var i = 0; i < entries.length; i++) {
+            var entry = entries[i];
+            var title = entry.title.$t.substr(0, 20);
+            var thumbnailUrl = entries[i].media$group.media$thumbnail[0].url;
+            var playerUrl = entries[i].media$group.media$content[0].url;
+            html.push('<li onclick="loadVideo(\'', playerUrl, '\', true)">',
+                      '<span class="titlec">', title, '...</span><br /><img src="',
+                      thumbnailUrl, '" width="130" height="97"/>', '</span></li>');
+        }
+        html.push('</ul><br style="clear: left;"/>');
+        document.getElementById('videos2').innerHTML = html.join('');
+        if (entries.length > 0) {
+            loadVideo(entries[0].media$group.media$content[0].url, false);
+        }
+    }
+</script>
+
+<body>
+
+    <div class="col-md-4">
+        <div class="list-group">
+            <ul class="list-group-item ">@Html.ActionLink("TOP 20 MOVIES OF THE YEAR", "Index", "Movie") </ul>
+            <ul class="list-group-item">@Html.ActionLink("TOP 20 LOVE OF THE YEAR", "Love", "Movie")</ul>
+            <ul class="list-group-item">@Html.ActionLink("TOP 20 ACTION MOVIES OF THE YEAR", "Action", "Movie")</ul>
+            <ul class="list-group-item">@Html.ActionLink("TOP 20 COMEDY MOVIES OF THE YEAR", "Comedy", "Movie")</ul>
+            <ul class="list-group-item">@Html.ActionLink("TOP 20 THRILLER MOVIES OF THE YEAR", "Thriller", "Movie")</ul>
+            <ul class="list-group-item">@Html.ActionLink("TOP 20 HORROR MOVIES OF THE YEAR", "Drama", "Movie")</ul>
+
+
+        </div>
+        <div id="playerContainer" style="width: 20em; height: 180px; float: left;">
+            <object id="player"></object>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+
+        <div id="videos2"></div>
+        <script type="text/javascript"
+                src="http://gdata.youtube.com/feeds/api/videos?q=NewHollywoodActionMovies2014&alt=json-in-script&callback=showMyVideos2&max-results=20&format=5">
+        </script>
+
+    </div>
+    <!---End-mid-grids----->
+    <!---start-bottom-grids----->
+    <!---End-footer----->
+    <!---End-wrap---->
+    <style>
+        table, th, td {
+            border: 33px solid white;
+        }
+    </style>
+    <div class="footer">
+        <div class="wrap">
+            <div class="footer-left">
+
+            </div>
+            <div class="footer-right">
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        /*
+                        var defaults = {
+                            containerID: 'toTop', // fading element id
+                            containerHoverID: 'toTopHover', // fading element hover id
+                            scrollSpeed: 1200,
+                            easingType: 'linear'
+                        };
+                        */
+
+                        $().UItoTop({ easingType: 'easeOutQuart' });
+
+                    });
+                </script>
+                <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+            </div>
+            <div class="clear"> </div>
+        </div>
+    </div>
+</body>
+
+
+

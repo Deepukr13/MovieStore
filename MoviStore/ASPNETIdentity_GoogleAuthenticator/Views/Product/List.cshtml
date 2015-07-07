@@ -1,0 +1,25 @@
+﻿@model ASPNETIdentity_GoogleAuthenticator.Models.ProductsListViewModel
+  
+@{
+    ViewBag.Title = "Admin: All Products";
+    Layout = "~/Views/Shared/_Base1.cshtml";
+}
+
+@using (Html.BeginForm()) { 
+    
+    <input type="search" id="searchTerm" name="SearchTerm" >
+     <input type="submit" value="Search For Movies"/>
+}
+
+<h3>U have searched for @ViewBag.search </h3>
+ 
+@foreach (var p in Model.Products)
+{
+    Html.RenderPartial("ProductSummary", p);
+    
+}
+
+<div class="pager">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List",
+new { page = x, category = Model.CurrentCategory }))
+</div>
